@@ -3,7 +3,9 @@ import { EntriesState } from './EntriesProvider';
 
 type EntriesActionType =
   | { type: '[Entry] Add-Entry'; payload: Entry }
-  | { type: '[Entry] Entry-updated'; payload: Entry };
+  | { type: '[Entry] Entry-updated'; payload: Entry }
+  | { type: '[Entry] Load-Entries'; payload: Entry[] }
+  | { type: '[Entry] Delete-Entry'; payload: string };
 
 export const EntriesReducer = (
   state: EntriesState,
@@ -29,6 +31,17 @@ export const EntriesReducer = (
         }),
       };
     }
+    case '[Entry] Delete-Entry': {
+      return {
+        ...state,
+        entries: state.entries.filter((entry) => entry._id !== action.payload),
+      };
+    }
+    case '[Entry] Load-Entries':
+      return {
+        ...state,
+        entries: [...action.payload],
+      };
     default:
       return state;
   }

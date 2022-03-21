@@ -1,1 +1,1 @@
-export * from './preferredTheme';
+export * as dateFunctions from './date-functions';

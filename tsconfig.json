@@ -23,7 +23,10 @@
       "@utils": ["utils/index.ts"],
       "@hooks": ["hooks/index.ts"],
       "@context/*": ["context/*"],
-      "@interfaces": ["interfaces/index.ts"]
+      "@interfaces": ["interfaces/index.ts"],
+      "@database": ["database/index.ts"],
+      "@models": ["models/index.ts"],
+      "@api": ["api/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
